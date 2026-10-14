@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Ink:wght@100..900&family=Cabin+Sketch:wght@400;700&family=Libre+Caslon+Condensed:ital,wght@0,400..700;1,400..700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+background-color: rgb(230, 230, 241);
+}
+header {
+    margin-top: 30px;
+    display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+h1 {
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #e00096 0%, #aa54cc 50%, #6343c7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cards {
+    display: grid;
+    grid-template-areas: 
+    "c1"
+    "c2"
+    "c3"
+    "c4"
+    ;
+}
+
+.card {
+margin-left: 20%;
+margin-right: 20%;
+margin-top: 30px;
+border-radius: 10px;
+padding-left: 10px;
+padding-right: 10px;
+grid-template-areas: 
+"t"
+"text "
+"text";
+}
+
+
+.title {
+    display: grid;
+    justify-content: space-between ;
+    grid-area: t;
+grid-template-areas:
+"h b" ;
+}
+h4 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    grid-area: h;
+    font-size: larger;
+}
+.buttons {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    grid-area: b;
+}
+
+p {
+    grid-area: text;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+header p {
+    text-align: center;
+
+}
+
+.card:first-child p {  
+font-family: 'Bitcount Ink', cursive;
+}
+
+.card:nth-child(2) p {
+font-family: 'Libre Caslon Condensed', serif;
+}
+
+.card:nth-child(3) p {
+ font-family: "Cabin Sketch", sans-serif;
+}
+
+.card p::first-letter {
+   font-size: larger;
+   color: .6f9ae5;
+}
+
+.card p::first-line {
+    font-weight: bold;
+}
+
+
+.card:nth-child(2) p {
+font-family: 'Libre Caslon Condensed', serif;
+}
+
+.card:nth-child(3) p {
+ font-family: "Cabin Sketch", serif;
+}
+
+button:hover {
+background-color:rgb(238, 75, 43);
+}
+
+
+.card:first-child:has(.flips:checked) {
+  background-color: purple;
+ color: aliceblue;
+
+}
+
+.card:first-child {
+    grid-area: c1;
+    border: 2px solid purple;
+    background-color: rgb(211, 191, 231);
+}
+
+.card:nth-child(2):has(.flips:checked) {
+    background-color: rgb(29, 228, 72);
+    color: aliceblue;
+
+}
+ 
+.card:nth-child(2){
+    grid-area: c2;
+    border: 2px solid rgb(29, 228, 72);
+    background-color: rgb(134, 238, 181);
+}
+
+
+.card:nth-child(3):has(.flips:checked) {
+    background-color: rgb(228, 29, 29);
+    color: aliceblue;
+}
+
+.card:nth-child(3) {
+    grid-area: c3;
+    border: 2px solid rgb(228, 29, 29);
+    background-color: rgb(238, 144, 144);
+}
+
+.flips {
+ opacity: 0;
+ position: absolute;
+}
+
+.flip {
+    display: inline-block;
+    height: 25px;
+    width: 40px;
+    border-radius: 40%;
+    position: relative;
+    background-color: aliceblue;
+}
+
+.flip::before{
+    content: " ";
+    position: absolute;
+    height: 19px;
+    width: 19px;
+    border-radius: 50%;
+    top: 3px;
+    left: 3px;
+    background-color: black;
+}
+
+.flips:first-child:checked + .flip::before {
+    display: none;
+}
+
+.flips:first-child:checked + .flip::after {
+    content: " ";
+    position: absolute;
+    height: 19px;
+    width: 19px;
+    border-radius: 50%;
+    top: 3px;
+    right: 3px;
+    background-color: black;
+}
+
+.flip::before{
+    content: " ";
+    position: absolute;
+    height: 19px;
+    width: 19px;
+    border-radius: 50%;
+    top: 3px;
+    left: 3px;
+    background-color: black;
+}
+
+.flips:nth-child(2):checked + .flip::before {
+    display: none;
+}
+
+.flips:nth-child(2):checked + .flip::after {
+    content: " ";
+    position: absolute;
+    height: 19px;
+    width: 19px;
+    border-radius: 50%;
+    top: 3px;
+    right: 3px;
+    background-color: black;
+}
+
+.flip::before{
+    content: " ";
+    position: absolute;
+    height: 19px;
+    width: 19px;
+    border-radius: 50%;
+    top: 3px;
+    left: 3px;
+    background-color: black;
+}
+
+.flips:last-child:checked + .flip::before {
+    display: none;
+}
+
+.flips:last-child:checked + .flip::after {
+    content: " ";
+    position: absolute;
+    height: 19px;
+    width: 19px;
+    border-radius: 50%;
+    top: 3px;
+    right: 3px;
+    background-color: black;
+}
